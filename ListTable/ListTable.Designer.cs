@@ -28,20 +28,222 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxHeaders = new System.Windows.Forms.TextBox();
+            this.tabControlListTable = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewTable = new System.Windows.Forms.DataGridView();
+            this.textBoxList = new System.Windows.Forms.TextBox();
+            this.menuStripTop = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStripBottom = new System.Windows.Forms.StatusStrip();
+            this.saveListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.loadTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanelMain.SuspendLayout();
+            this.tabControlListTable.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
+            this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanelMain
+            // 
+            this.tableLayoutPanelMain.ColumnCount = 1;
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain.Controls.Add(this.statusStripBottom, 0, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.textBoxHeaders, 0, 2);
+            this.tableLayoutPanelMain.Controls.Add(this.tabControlListTable, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.menuStripTop, 0, 0);
+            this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
+            this.tableLayoutPanelMain.RowCount = 4;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(650, 418);
+            this.tableLayoutPanelMain.TabIndex = 0;
+            // 
+            // textBoxHeaders
+            // 
+            this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHeaders.Location = new System.Drawing.Point(3, 372);
+            this.textBoxHeaders.Name = "textBoxHeaders";
+            this.textBoxHeaders.Size = new System.Drawing.Size(644, 20);
+            this.textBoxHeaders.TabIndex = 1;
+            // 
+            // tabControlListTable
+            // 
+            this.tabControlListTable.Controls.Add(this.tabPage2);
+            this.tabControlListTable.Controls.Add(this.tabPage1);
+            this.tabControlListTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlListTable.Location = new System.Drawing.Point(3, 26);
+            this.tabControlListTable.Name = "tabControlListTable";
+            this.tabControlListTable.SelectedIndex = 0;
+            this.tabControlListTable.Size = new System.Drawing.Size(644, 340);
+            this.tabControlListTable.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewTable);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(636, 314);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Table";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.textBoxList);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(636, 314);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "List";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTable
+            // 
+            this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTable.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewTable.Name = "dataGridViewTable";
+            this.dataGridViewTable.Size = new System.Drawing.Size(630, 308);
+            this.dataGridViewTable.TabIndex = 0;
+            // 
+            // textBoxList
+            // 
+            this.textBoxList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxList.Location = new System.Drawing.Point(3, 3);
+            this.textBoxList.Multiline = true;
+            this.textBoxList.Name = "textBoxList";
+            this.textBoxList.Size = new System.Drawing.Size(630, 308);
+            this.textBoxList.TabIndex = 0;
+            // 
+            // menuStripTop
+            // 
+            this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStripTop.Location = new System.Drawing.Point(0, 0);
+            this.menuStripTop.Name = "menuStripTop";
+            this.menuStripTop.Size = new System.Drawing.Size(650, 23);
+            this.menuStripTop.TabIndex = 3;
+            this.menuStripTop.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveListToolStripMenuItem,
+            this.saveTableToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.loadToolStripMenuItem,
+            this.loadTableToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.clearAllToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load List...";
+            // 
+            // statusStripBottom
+            // 
+            this.statusStripBottom.Location = new System.Drawing.Point(0, 396);
+            this.statusStripBottom.Name = "statusStripBottom";
+            this.statusStripBottom.Size = new System.Drawing.Size(650, 22);
+            this.statusStripBottom.TabIndex = 5;
+            this.statusStripBottom.Text = "statusStrip1";
+            // 
+            // saveListToolStripMenuItem
+            // 
+            this.saveListToolStripMenuItem.Name = "saveListToolStripMenuItem";
+            this.saveListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveListToolStripMenuItem.Text = "Save List";
+            // 
+            // saveTableToolStripMenuItem
+            // 
+            this.saveTableToolStripMenuItem.Name = "saveTableToolStripMenuItem";
+            this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveTableToolStripMenuItem.Text = "Save Table";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // clearAllToolStripMenuItem
+            // 
+            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearAllToolStripMenuItem.Text = "Clear All";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // loadTableToolStripMenuItem
+            // 
+            this.loadTableToolStripMenuItem.Name = "loadTableToolStripMenuItem";
+            this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadTableToolStripMenuItem.Text = "Load Table...";
             // 
             // ListTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(650, 418);
+            this.Controls.Add(this.tableLayoutPanelMain);
+            this.MainMenuStrip = this.menuStripTop;
             this.Name = "ListTable";
             this.Text = "List Table";
+            this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelMain.PerformLayout();
+            this.tabControlListTable.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
+            this.menuStripTop.ResumeLayout(false);
+            this.menuStripTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
+        private System.Windows.Forms.TextBox textBoxHeaders;
+        private System.Windows.Forms.TabControl tabControlListTable;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridViewTable;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox textBoxList;
+        private System.Windows.Forms.MenuStrip menuStripTop;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStripBottom;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem loadTableToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
     }
 }
 
