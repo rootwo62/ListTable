@@ -47,6 +47,8 @@
             this.loadTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialogList = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogTable = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialogList = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialogTable = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControlListTable.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -130,6 +132,7 @@
             this.textBoxList.Location = new System.Drawing.Point(3, 3);
             this.textBoxList.Multiline = true;
             this.textBoxList.Name = "textBoxList";
+            this.textBoxList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxList.Size = new System.Drawing.Size(581, 288);
             this.textBoxList.TabIndex = 0;
             // 
@@ -177,12 +180,14 @@
             this.saveListToolStripMenuItem.Name = "saveListToolStripMenuItem";
             this.saveListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveListToolStripMenuItem.Text = "Save List";
+            this.saveListToolStripMenuItem.Click += new System.EventHandler(this.saveListToolStripMenuItem_Click);
             // 
             // saveTableToolStripMenuItem
             // 
             this.saveTableToolStripMenuItem.Name = "saveTableToolStripMenuItem";
             this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveTableToolStripMenuItem.Text = "Save Table";
+            this.saveTableToolStripMenuItem.Click += new System.EventHandler(this.saveTableToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -215,6 +220,14 @@
             // openFileDialogTable
             // 
             this.openFileDialogTable.Filter = "Xml File|*.xml";
+            // 
+            // saveFileDialogList
+            // 
+            this.saveFileDialogList.Filter = "Text File|*.txt";
+            // 
+            // saveFileDialogTable
+            // 
+            this.saveFileDialogTable.Filter = "Xml File|*.xml";
             // 
             // formListTable
             // 
@@ -260,6 +273,8 @@
         private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialogList;
         private System.Windows.Forms.OpenFileDialog openFileDialogTable;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogList;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogTable;
     }
 }
 
