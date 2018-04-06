@@ -18,23 +18,35 @@ namespace ListTable
             InitializeComponent();
         }
 
+        private string TableFile, ListFile, SaveFile;
+
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialogList.ShowDialog();
-
-            using (StreamReader reader = new StreamReader(openFileDialogList.FileName))
+            ListFile = openFileDialogList.FileName;
+            SaveFile = openFileDialogList.FileName;
+            if (openFileDialogList.FileName != "")
             {
-                textBoxList.Text = reader.ReadToEnd();
+                using (StreamReader reader = new StreamReader(ListFile))
+                {
+                    textBoxList.Text = reader.ReadToEnd();
+                }
             }
         }
 
         private void loadTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialogTable.ShowDialog();
+            TableFile = openFileDialogTable.FileName;
+            SaveFile = openFileDialogTable.FileName;
+
             DataSet ds = new DataSet();
-            ds.ReadXml(openFileDialogTable.FileName);
-            DataTable dt = ds.Tables[1];
-            dataGridViewTable.DataSource = dt ;
+            if (openFileDialogTable.FileName != "")
+            {
+                ds.ReadXml(TableFile);
+                DataTable dt = ds.Tables[0];
+                dataGridViewTable.DataSource = dt;
+            }
         }
 
         private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,7 +72,17 @@ namespace ListTable
         {
             saveFileDialogTable.ShowDialog();
             DataTable dt = (DataTable)dataGridViewTable.DataSource;
-            dt.WriteXml(saveFileDialogTable.FileName);
+            DataSet ds = new DataSet();
+            ds.ReadXml("DataSetTables.xsd");
+            dt = dt.Copy();
+            ds.Tables.Add(dt);
+            ds.WriteXml("DataSetTables.xsd");
+            //dt.WriteXml(saveFileDialogTable.FileName);
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

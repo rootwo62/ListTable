@@ -29,30 +29,31 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.statusStripBottom = new System.Windows.Forms.StatusStrip();
             this.textBoxHeaders = new System.Windows.Forms.TextBox();
             this.tabControlListTable = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.textBoxList = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStripBottom = new System.Windows.Forms.StatusStrip();
             this.saveListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialogList = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogTable = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogList = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialogTable = new System.Windows.Forms.SaveFileDialog();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControlListTable.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,14 @@
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(601, 398);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
+            // statusStripBottom
+            // 
+            this.statusStripBottom.Location = new System.Drawing.Point(0, 376);
+            this.statusStripBottom.Name = "statusStripBottom";
+            this.statusStripBottom.Size = new System.Drawing.Size(601, 22);
+            this.statusStripBottom.TabIndex = 5;
+            this.statusStripBottom.Text = "statusStrip1";
+            // 
             // textBoxHeaders
             // 
             this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,17 +104,6 @@
             this.tabControlListTable.Size = new System.Drawing.Size(595, 320);
             this.tabControlListTable.TabIndex = 2;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridViewTable);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(587, 294);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Table";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBoxList);
@@ -117,15 +115,6 @@
             this.tabPage2.Text = "List";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTable
-            // 
-            this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTable.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewTable.Name = "dataGridViewTable";
-            this.dataGridViewTable.Size = new System.Drawing.Size(581, 288);
-            this.dataGridViewTable.TabIndex = 0;
-            // 
             // textBoxList
             // 
             this.textBoxList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,6 +124,27 @@
             this.textBoxList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxList.Size = new System.Drawing.Size(581, 288);
             this.textBoxList.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridViewTable);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(587, 294);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Table";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTable
+            // 
+            this.dataGridViewTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTable.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewTable.Name = "dataGridViewTable";
+            this.dataGridViewTable.Size = new System.Drawing.Size(581, 288);
+            this.dataGridViewTable.TabIndex = 0;
             // 
             // menuStripTop
             // 
@@ -149,6 +159,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
             this.saveListToolStripMenuItem,
             this.saveTableToolStripMenuItem,
             this.toolStripSeparator1,
@@ -160,58 +171,50 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.loadToolStripMenuItem.Text = "Load List...";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-            // 
-            // statusStripBottom
-            // 
-            this.statusStripBottom.Location = new System.Drawing.Point(0, 376);
-            this.statusStripBottom.Name = "statusStripBottom";
-            this.statusStripBottom.Size = new System.Drawing.Size(601, 22);
-            this.statusStripBottom.TabIndex = 5;
-            this.statusStripBottom.Text = "statusStrip1";
-            // 
             // saveListToolStripMenuItem
             // 
             this.saveListToolStripMenuItem.Name = "saveListToolStripMenuItem";
-            this.saveListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveListToolStripMenuItem.Text = "Save List";
+            this.saveListToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveListToolStripMenuItem.Text = "Save List As...";
             this.saveListToolStripMenuItem.Click += new System.EventHandler(this.saveListToolStripMenuItem_Click);
             // 
             // saveTableToolStripMenuItem
             // 
             this.saveTableToolStripMenuItem.Name = "saveTableToolStripMenuItem";
-            this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveTableToolStripMenuItem.Text = "Save Table";
+            this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveTableToolStripMenuItem.Text = "Save Table As...";
             this.saveTableToolStripMenuItem.Click += new System.EventHandler(this.saveTableToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
-            // clearAllToolStripMenuItem
+            // loadToolStripMenuItem
             // 
-            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearAllToolStripMenuItem.Text = "Clear All";
-            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.loadToolStripMenuItem.Text = "Load List...";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // loadTableToolStripMenuItem
             // 
             this.loadTableToolStripMenuItem.Name = "loadTableToolStripMenuItem";
-            this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.loadTableToolStripMenuItem.Text = "Load Table...";
             this.loadTableToolStripMenuItem.Click += new System.EventHandler(this.loadTableToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
+            // 
+            // clearAllToolStripMenuItem
+            // 
+            this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
+            this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.clearAllToolStripMenuItem.Text = "Clear All";
+            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // openFileDialogList
             // 
@@ -229,6 +232,13 @@
             // 
             this.saveFileDialogTable.Filter = "Xml File|*.xml";
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // formListTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,9 +252,9 @@
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
             this.tabControlListTable.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
@@ -275,6 +285,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogTable;
         private System.Windows.Forms.SaveFileDialog saveFileDialogList;
         private System.Windows.Forms.SaveFileDialog saveFileDialogTable;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 
