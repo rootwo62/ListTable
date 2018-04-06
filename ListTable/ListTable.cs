@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace ListTable
 {
-    public partial class ListTable : Form
+    public partial class formListTable : Form
     {
-        public ListTable()
+        public formListTable()
         {
             InitializeComponent();
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialogList.ShowDialog();
+            
+
+        }
+
+        private void loadTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialogTable.ShowDialog();
+        }
+
+        private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxList.Text = "";
+            textBoxHeaders.Text = "";
+            dataGridViewTable.DataSource = null;
         }
     }
 }

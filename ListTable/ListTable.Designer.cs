@@ -1,6 +1,6 @@
 ﻿namespace ListTable
 {
-    partial class ListTable
+    partial class formListTable
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,8 @@
             this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.loadTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialogList = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogTable = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControlListTable.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -69,15 +71,15 @@
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(650, 418);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(601, 398);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // textBoxHeaders
             // 
             this.textBoxHeaders.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxHeaders.Location = new System.Drawing.Point(3, 372);
+            this.textBoxHeaders.Location = new System.Drawing.Point(3, 352);
             this.textBoxHeaders.Name = "textBoxHeaders";
-            this.textBoxHeaders.Size = new System.Drawing.Size(644, 20);
+            this.textBoxHeaders.Size = new System.Drawing.Size(595, 20);
             this.textBoxHeaders.TabIndex = 1;
             // 
             // tabControlListTable
@@ -88,7 +90,7 @@
             this.tabControlListTable.Location = new System.Drawing.Point(3, 26);
             this.tabControlListTable.Name = "tabControlListTable";
             this.tabControlListTable.SelectedIndex = 0;
-            this.tabControlListTable.Size = new System.Drawing.Size(644, 340);
+            this.tabControlListTable.Size = new System.Drawing.Size(595, 320);
             this.tabControlListTable.TabIndex = 2;
             // 
             // tabPage1
@@ -97,7 +99,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(636, 314);
+            this.tabPage1.Size = new System.Drawing.Size(587, 294);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Table";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -108,7 +110,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(636, 314);
+            this.tabPage2.Size = new System.Drawing.Size(587, 294);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "List";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -119,7 +121,7 @@
             this.dataGridViewTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTable.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewTable.Name = "dataGridViewTable";
-            this.dataGridViewTable.Size = new System.Drawing.Size(630, 308);
+            this.dataGridViewTable.Size = new System.Drawing.Size(581, 288);
             this.dataGridViewTable.TabIndex = 0;
             // 
             // textBoxList
@@ -128,7 +130,7 @@
             this.textBoxList.Location = new System.Drawing.Point(3, 3);
             this.textBoxList.Multiline = true;
             this.textBoxList.Name = "textBoxList";
-            this.textBoxList.Size = new System.Drawing.Size(630, 308);
+            this.textBoxList.Size = new System.Drawing.Size(581, 288);
             this.textBoxList.TabIndex = 0;
             // 
             // menuStripTop
@@ -137,7 +139,7 @@
             this.fileToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
             this.menuStripTop.Name = "menuStripTop";
-            this.menuStripTop.Size = new System.Drawing.Size(650, 23);
+            this.menuStripTop.Size = new System.Drawing.Size(601, 23);
             this.menuStripTop.TabIndex = 3;
             this.menuStripTop.Text = "menuStrip1";
             // 
@@ -160,12 +162,13 @@
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadToolStripMenuItem.Text = "Load List...";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // statusStripBottom
             // 
-            this.statusStripBottom.Location = new System.Drawing.Point(0, 396);
+            this.statusStripBottom.Location = new System.Drawing.Point(0, 376);
             this.statusStripBottom.Name = "statusStripBottom";
-            this.statusStripBottom.Size = new System.Drawing.Size(650, 22);
+            this.statusStripBottom.Size = new System.Drawing.Size(601, 22);
             this.statusStripBottom.TabIndex = 5;
             this.statusStripBottom.Text = "statusStrip1";
             // 
@@ -191,6 +194,7 @@
             this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
             this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearAllToolStripMenuItem.Text = "Clear All";
+            this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -202,15 +206,25 @@
             this.loadTableToolStripMenuItem.Name = "loadTableToolStripMenuItem";
             this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadTableToolStripMenuItem.Text = "Load Table...";
+            this.loadTableToolStripMenuItem.Click += new System.EventHandler(this.loadTableToolStripMenuItem_Click);
             // 
-            // ListTable
+            // openFileDialogList
+            // 
+            this.openFileDialogList.Filter = "Text File|*.txt";
+            // 
+            // openFileDialogTable
+            // 
+            this.openFileDialogTable.Filter = "Xml File|*.xml";
+            // 
+            // formListTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 418);
+            this.ClientSize = new System.Drawing.Size(601, 398);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.MainMenuStrip = this.menuStripTop;
-            this.Name = "ListTable";
+            this.MinimumSize = new System.Drawing.Size(617, 437);
+            this.Name = "formListTable";
             this.Text = "List Table";
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
@@ -244,6 +258,8 @@
         private System.Windows.Forms.ToolStripMenuItem loadTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem clearAllToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialogList;
+        private System.Windows.Forms.OpenFileDialog openFileDialogTable;
     }
 }
 

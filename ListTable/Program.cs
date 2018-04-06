@@ -16,7 +16,7 @@ namespace ListTable
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListTable());
+            Application.Run(new formListTable());
         }
     }
 }
