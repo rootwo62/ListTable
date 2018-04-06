@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace ListTable
 {
@@ -68,16 +69,64 @@ namespace ListTable
             }
         }
 
+        private void formListTable_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openFileDialogTable.ShowDialog();
+            TableFile = openFileDialogTable.FileName;
+            SaveFile = openFileDialogTable.FileName;
+
+            DataSet ds = new DataSet();
+            if (openFileDialogTable.FileName != "")
+            {
+                ds.ReadXml(TableFile);
+                DataTable dt = ds.Tables[0];
+                dataGridViewTable.DataSource = dt;
+            }
+        }
+
+        private void loadToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            openFileDialogList.ShowDialog();
+            ListFile = openFileDialogList.FileName;
+            SaveFile = openFileDialogList.FileName;
+            if (openFileDialogList.FileName != "")
+            {
+                using (StreamReader reader = new StreamReader(ListFile))
+                {
+                    textBoxList.Text = reader.ReadToEnd();
+                }
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet("root");
+            DataTable dt = ds.Tables.Add();
+            dataGridViewTable.DataSource = dt;
+            dataGridViewTable.AllowUserToAddRows = true;
+            dataGridViewTable.AllowUserToDeleteRows = true;
+        }
+
+        private void insertColumnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string input = Interaction.InputBox("Type the name of the column header.", "New Column", "");
+            dataGridViewTable.Columns.Add(input, input);
+        }
+
         private void saveTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             saveFileDialogTable.ShowDialog();
             DataTable dt = (DataTable)dataGridViewTable.DataSource;
-            DataSet ds = new DataSet();
-            ds.ReadXml("DataSetTables.xsd");
             dt = dt.Copy();
+            DataSet ds = new DataSet("root");
             ds.Tables.Add(dt);
-            ds.WriteXml("DataSetTables.xsd");
-            //dt.WriteXml(saveFileDialogTable.FileName);
+            ds.WriteXml(saveFileDialogTable.FileName);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
