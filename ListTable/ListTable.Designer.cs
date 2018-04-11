@@ -35,6 +35,11 @@
             this.tabControlListTable = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
+            this.contextMenuStripTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBoxList = new System.Windows.Forms.TextBox();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
@@ -57,18 +62,13 @@
             this.openFileDialogTable = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogList = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialogTable = new System.Windows.Forms.SaveFileDialog();
-            this.contextMenuStripTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.insertColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain.SuspendLayout();
             this.tabControlListTable.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
+            this.contextMenuStripTable.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.menuStripTop.SuspendLayout();
-            this.contextMenuStripTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -140,6 +140,41 @@
             this.dataGridViewTable.Size = new System.Drawing.Size(581, 288);
             this.dataGridViewTable.TabIndex = 0;
             // 
+            // contextMenuStripTable
+            // 
+            this.contextMenuStripTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem,
+            this.insertColumnToolStripMenuItem,
+            this.deleteRowToolStripMenuItem,
+            this.selectAllToolStripMenuItem});
+            this.contextMenuStripTable.Name = "contextMenuStripTable";
+            this.contextMenuStripTable.Size = new System.Drawing.Size(150, 92);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            // 
+            // insertColumnToolStripMenuItem
+            // 
+            this.insertColumnToolStripMenuItem.Name = "insertColumnToolStripMenuItem";
+            this.insertColumnToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.insertColumnToolStripMenuItem.Text = "Insert Column";
+            this.insertColumnToolStripMenuItem.Click += new System.EventHandler(this.insertColumnToolStripMenuItem_Click);
+            // 
+            // deleteRowToolStripMenuItem
+            // 
+            this.deleteRowToolStripMenuItem.Name = "deleteRowToolStripMenuItem";
+            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.deleteRowToolStripMenuItem.Text = "Delete Row";
+            // 
+            // selectAllToolStripMenuItem
+            // 
+            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.selectAllToolStripMenuItem.Text = "Select All";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBoxList);
@@ -160,6 +195,7 @@
             this.textBoxList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxList.Size = new System.Drawing.Size(581, 288);
             this.textBoxList.TabIndex = 0;
+            this.textBoxList.TextChanged += new System.EventHandler(this.textBoxList_TextChanged);
             // 
             // menuStripTop
             // 
@@ -301,41 +337,6 @@
             // 
             this.saveFileDialogTable.Filter = "Xml File|*.xml|Dataset File|*.xsd";
             // 
-            // contextMenuStripTable
-            // 
-            this.contextMenuStripTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyToolStripMenuItem,
-            this.insertColumnToolStripMenuItem,
-            this.deleteRowToolStripMenuItem,
-            this.selectAllToolStripMenuItem});
-            this.contextMenuStripTable.Name = "contextMenuStripTable";
-            this.contextMenuStripTable.Size = new System.Drawing.Size(150, 92);
-            // 
-            // insertColumnToolStripMenuItem
-            // 
-            this.insertColumnToolStripMenuItem.Name = "insertColumnToolStripMenuItem";
-            this.insertColumnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.insertColumnToolStripMenuItem.Text = "Insert Column";
-            this.insertColumnToolStripMenuItem.Click += new System.EventHandler(this.insertColumnToolStripMenuItem_Click);
-            // 
-            // deleteRowToolStripMenuItem
-            // 
-            this.deleteRowToolStripMenuItem.Name = "deleteRowToolStripMenuItem";
-            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteRowToolStripMenuItem.Text = "Delete Row";
-            // 
-            // selectAllToolStripMenuItem
-            // 
-            this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.selectAllToolStripMenuItem.Text = "Select All";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
-            // 
             // formListTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,11 +353,11 @@
             this.tabControlListTable.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
+            this.contextMenuStripTable.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
-            this.contextMenuStripTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

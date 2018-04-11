@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.VisualBasic;
+using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 
 namespace ListTable
 {
@@ -127,10 +129,59 @@ namespace ListTable
             DataSet ds = new DataSet("root");
             ds.Tables.Add(dt);
             ds.WriteXml(saveFileDialogTable.FileName);
+
+        }
+
+        private void textBoxList_TextChanged(object sender, EventArgs e)
+        {
+            convertListToTable();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void convertListToTable()
+        {
+
+            dataGridViewTable.DataSource = null;
+
+            List<string> headers = new List<string> { };
+            headers.AddRange(textBoxHeaders.Text.Split(';'));
+
+            DataSet ds = new DataSet("root");
+            DataTable dt = ds.Tables.Add("table" + (ds.Tables.Count + 1));
+            DataRow dr = null;
+
+            for (int i = 0; i <= (headers.Count - 1); ++i)
+            {
+                Console.WriteLine(i + " = " + headers[i]);
+                dt.Columns.Add(headers[i].Trim());
+            }
+
+
+            foreach (string line in textBoxList.Text.Split(Environment.NewLine.ToCharArray()))
+            {
+                if (line.Trim().Contains(headers[0]))
+                {
+                    //Console.WriteLine(headers[0] + ": row = " + line);
+                    dr = dt.NewRow();
+                    dr[headers[0]] = line.Replace(headers[0] + " ", "");
+                    dt.Rows.Add(dr);
+                }
+                for (int i = 1; i <= (headers.Count - 1); ++i)
+                {
+                    Console.WriteLine("column = " + headers[i]);
+                    if (line.Trim().Contains(headers[i]))
+                    {
+                        //Console.WriteLine(headers[i] + ": row = " + line);
+                        dr[headers[i]] = line.Replace(headers[i] + " ", "");
+                    }
+                }
+            }
+
+            dataGridViewTable.DataSource = dt;
 
         }
     }
