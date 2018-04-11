@@ -137,6 +137,11 @@ namespace ListTable
             convertListToTable();
         }
 
+        private void textBoxHeaders_TextChanged(object sender, EventArgs e)
+        {
+            convertListToTable();
+        }
+
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -144,7 +149,6 @@ namespace ListTable
 
         private void convertListToTable()
         {
-
             dataGridViewTable.DataSource = null;
 
             List<string> headers = new List<string> { };
@@ -156,19 +160,31 @@ namespace ListTable
 
             for (int i = 0; i <= (headers.Count - 1); ++i)
             {
-                Console.WriteLine(i + " = " + headers[i]);
-                dt.Columns.Add(headers[i].Trim());
+                try
+                {
+                    if (headers[i] != "")
+                    {
+                        Console.WriteLine(i + " = " + headers[i]);
+                        dt.Columns.Add(headers[i].Trim());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
 
             foreach (string line in textBoxList.Text.Split(Environment.NewLine.ToCharArray()))
             {
                 if (line.Trim().Contains(headers[0]))
                 {
                     //Console.WriteLine(headers[0] + ": row = " + line);
-                    dr = dt.NewRow();
-                    dr[headers[0]] = line.Replace(headers[0] + " ", "");
-                    dt.Rows.Add(dr);
+                    if (headers[0] != "")
+                    {
+                        dr = dt.NewRow();
+                        dr[headers[0]] = line.Replace(headers[0] + " ", "");
+                        dt.Rows.Add(dr);
+                    }
                 }
                 for (int i = 1; i <= (headers.Count - 1); ++i)
                 {
@@ -176,12 +192,18 @@ namespace ListTable
                     if (line.Trim().Contains(headers[i]))
                     {
                         //Console.WriteLine(headers[i] + ": row = " + line);
-                        dr[headers[i]] = line.Replace(headers[i] + " ", "");
+                        if (headers[i] != "")
+                        {
+                            dr[headers[i]] = line.Replace(headers[i] + " ", "");
+                        }
                     }
                 }
             }
 
             dataGridViewTable.DataSource = dt;
+
+
+
 
         }
     }

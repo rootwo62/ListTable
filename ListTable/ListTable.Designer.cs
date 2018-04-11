@@ -105,6 +105,7 @@
             this.textBoxHeaders.Name = "textBoxHeaders";
             this.textBoxHeaders.Size = new System.Drawing.Size(595, 20);
             this.textBoxHeaders.TabIndex = 1;
+            this.textBoxHeaders.TextChanged += new System.EventHandler(this.textBoxHeaders_TextChanged);
             // 
             // tabControlListTable
             // 
