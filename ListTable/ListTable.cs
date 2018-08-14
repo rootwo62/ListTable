@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.VisualBasic;
-using System.Security.Cryptography;
-using System.Runtime.InteropServices;
-
+using System.Xml.Linq;
+using System.Linq;
 
 namespace ListTable
 {
@@ -48,9 +43,26 @@ namespace ListTable
 			if (openFileDialogTable.FileName != "")
 			{
 				ds.ReadXml(TableFile);
-				DataTable dt = ds.Tables[0];
-				dataGridViewTable.DataSource = dt;
+				dataGridViewTable.DataSource = ds.Tables[0];
+
+				string lines = "";
+
+				foreach (DataGridViewRow row in dataGridViewTable.Rows)
+				{
+					foreach (DataGridViewColumn col in dataGridViewTable.Columns)
+					{
+						var cell = row.Cells[col.Index].Value;
+						if (cell != DBNull.Value)
+							lines += string.Format("{1} {2}{0}", Environment.NewLine, col.Name, cell);
+					}
+					lines += Environment.NewLine;
+				}
+
+				textBoxList.Text = lines;
 			}
+
+
+
 		}
 
 		private void clearAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -189,8 +201,8 @@ namespace ListTable
 		{
 			dataGridViewTable.DataSource = null;
 
-			DataSet ds = new DataSet("root");
-			DataTable dt = ds.Tables.Add("table" + (ds.Tables.Count + 1));
+			DataSet ds = new DataSet("table");
+			DataTable dt = ds.Tables.Add("row");
 			DataColumn dc = null;
 
 			// create columns 
