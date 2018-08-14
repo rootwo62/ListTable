@@ -170,8 +170,17 @@ namespace ListTable
 
 		private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (dataGridViewTable.CurrentRow != null)
-				dataGridViewTable.Rows.RemoveAt(dataGridViewTable.CurrentRow.Index);
+			try
+			{
+				if (dataGridViewTable.CurrentRow != null)
+					dataGridViewTable.Rows.RemoveAt(dataGridViewTable.CurrentRow.Index);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "An Error Occured");
+				Console.WriteLine("[ERROR] {0}", ex.Message);				
+			}
+
 		}
 
 		private void dataGridViewTable_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -206,7 +215,7 @@ namespace ListTable
 			// create columns 
 			foreach (string header in textBoxHeaders.Text.Split(';'))
 			{
-				string header_clean = header.Trim().ToUpper();
+				string header_clean = header.Trim();
 				dc = new DataColumn(header_clean);
 				dt.Columns.Add(dc);
 			}
@@ -240,6 +249,12 @@ namespace ListTable
 							
 					}
 				}
+			}
+
+			// create columns 
+			foreach (DataGridViewColumn col in dataGridViewTable.Columns)
+			{
+				col.Name = col.Name.ToUpper();		
 			}
 
 			dataGridViewTable.DataSource = dt;
