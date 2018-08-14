@@ -40,27 +40,35 @@ namespace ListTable
 			SaveFile = openFileDialogTable.FileName;
 
 			DataSet ds = new DataSet();
-			if (openFileDialogTable.FileName != "")
+
+			try
 			{
-				ds.ReadXml(TableFile);
-				dataGridViewTable.DataSource = ds.Tables[0];
-
-				string lines = "";
-
-				foreach (DataGridViewRow row in dataGridViewTable.Rows)
+				if (openFileDialogTable.FileName != "")
 				{
-					foreach (DataGridViewColumn col in dataGridViewTable.Columns)
+					ds.ReadXml(TableFile);
+					dataGridViewTable.DataSource = ds.Tables[0];
+
+					string lines = "";
+
+					foreach (DataGridViewRow row in dataGridViewTable.Rows)
 					{
-						var cell = row.Cells[col.Index].Value;
-						if (cell != DBNull.Value)
-							lines += string.Format("{1} {2}{0}", Environment.NewLine, col.Name, cell);
+						foreach (DataGridViewColumn col in dataGridViewTable.Columns)
+						{
+							var cell = row.Cells[col.Index].Value;
+							if (cell != DBNull.Value)
+								lines += string.Format("{1} {2}{0}", Environment.NewLine, col.Name, cell);
+						}
+						lines += Environment.NewLine;
 					}
-					lines += Environment.NewLine;
+
+					textBoxList.Text = lines;
 				}
-
-				textBoxList.Text = lines;
 			}
-
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "An Error Occured");
+				Console.WriteLine("[ERROR] {0}", ex.Message);
+			}
 
 
 		}
@@ -85,11 +93,6 @@ namespace ListTable
 					writer.WriteLine(line);
 				}
 			}
-		}
-
-		private void formListTable_Load(object sender, EventArgs e)
-		{
-
 		}
 
 		private void loadToolStripMenuItem1_Click(object sender, EventArgs e)

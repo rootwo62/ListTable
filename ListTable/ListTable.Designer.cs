@@ -300,7 +300,6 @@
 			this.MinimumSize = new System.Drawing.Size(617, 437);
 			this.Name = "formListTable";
 			this.Text = "List Table";
-			this.Load += new System.EventHandler(this.formListTable_Load);
 			this.tableLayoutPanelMain.ResumeLayout(false);
 			this.tableLayoutPanelMain.PerformLayout();
 			this.tabControlListTable.ResumeLayout(false);
