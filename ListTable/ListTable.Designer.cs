@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formListTable));
 			this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
 			this.statusStripBottom = new System.Windows.Forms.StatusStrip();
 			this.textBoxHeaders = new System.Windows.Forms.TextBox();
@@ -232,45 +233,45 @@
 			// saveListToolStripMenuItem
 			// 
 			this.saveListToolStripMenuItem.Name = "saveListToolStripMenuItem";
-			this.saveListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveListToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.saveListToolStripMenuItem.Text = "Save List As...";
 			this.saveListToolStripMenuItem.Click += new System.EventHandler(this.saveListToolStripMenuItem_Click);
 			// 
 			// saveTableToolStripMenuItem
 			// 
 			this.saveTableToolStripMenuItem.Name = "saveTableToolStripMenuItem";
-			this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.saveTableToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.saveTableToolStripMenuItem.Text = "Save Table As...";
 			this.saveTableToolStripMenuItem.Click += new System.EventHandler(this.saveTableToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
 			// 
 			// loadToolStripMenuItem
 			// 
 			this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-			this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.loadToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.loadToolStripMenuItem.Text = "Load List...";
 			this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
 			// 
 			// loadTableToolStripMenuItem
 			// 
 			this.loadTableToolStripMenuItem.Name = "loadTableToolStripMenuItem";
-			this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.loadTableToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.loadTableToolStripMenuItem.Text = "Load Table...";
 			this.loadTableToolStripMenuItem.Click += new System.EventHandler(this.loadTableToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(151, 6);
 			// 
 			// clearAllToolStripMenuItem
 			// 
 			this.clearAllToolStripMenuItem.Name = "clearAllToolStripMenuItem";
-			this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.clearAllToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
 			this.clearAllToolStripMenuItem.Text = "Clear All";
 			this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
 			// 
@@ -296,6 +297,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1021, 690);
 			this.Controls.Add(this.tableLayoutPanelMain);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStripTop;
 			this.MinimumSize = new System.Drawing.Size(617, 437);
 			this.Name = "formListTable";
