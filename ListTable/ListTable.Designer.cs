@@ -53,12 +53,6 @@
 			this.loadTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.tableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.loadToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialogList = new System.Windows.Forms.OpenFileDialog();
 			this.openFileDialogTable = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialogList = new System.Windows.Forms.SaveFileDialog();
@@ -215,9 +209,7 @@
 			// menuStripTop
 			// 
 			this.menuStripTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.tableToolStripMenuItem,
-            this.listToolStripMenuItem});
+            this.fileToolStripMenuItem});
 			this.menuStripTop.Location = new System.Drawing.Point(0, 0);
 			this.menuStripTop.Name = "menuStripTop";
 			this.menuStripTop.Size = new System.Drawing.Size(1021, 23);
@@ -291,51 +283,6 @@
 			this.clearAllToolStripMenuItem.Text = "Clear All";
 			this.clearAllToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
 			// 
-			// tableToolStripMenuItem
-			// 
-			this.tableToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.loadToolStripMenuItem1});
-			this.tableToolStripMenuItem.Name = "tableToolStripMenuItem";
-			this.tableToolStripMenuItem.Size = new System.Drawing.Size(47, 19);
-			this.tableToolStripMenuItem.Text = "Table";
-			// 
-			// newToolStripMenuItem
-			// 
-			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-			this.newToolStripMenuItem.Text = "New";
-			this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-			// 
-			// loadToolStripMenuItem1
-			// 
-			this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-			this.loadToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-			this.loadToolStripMenuItem1.Text = "Load";
-			this.loadToolStripMenuItem1.Click += new System.EventHandler(this.loadToolStripMenuItem1_Click);
-			// 
-			// listToolStripMenuItem
-			// 
-			this.listToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem1,
-            this.loadToolStripMenuItem2});
-			this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-			this.listToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
-			this.listToolStripMenuItem.Text = "List";
-			// 
-			// newToolStripMenuItem1
-			// 
-			this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
-			this.newToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
-			this.newToolStripMenuItem1.Text = "New";
-			// 
-			// loadToolStripMenuItem2
-			// 
-			this.loadToolStripMenuItem2.Name = "loadToolStripMenuItem2";
-			this.loadToolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
-			this.loadToolStripMenuItem2.Text = "Load";
-			this.loadToolStripMenuItem2.Click += new System.EventHandler(this.loadToolStripMenuItem2_Click);
-			// 
 			// openFileDialogList
 			// 
 			this.openFileDialogList.Filter = "Text File|*.txt";
@@ -401,12 +348,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialogList;
         private System.Windows.Forms.SaveFileDialog saveFileDialogTable;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tableToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTable;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertColumnToolStripMenuItem;
