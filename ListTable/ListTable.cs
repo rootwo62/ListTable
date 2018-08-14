@@ -192,11 +192,6 @@ namespace ListTable
 			toolTipInfo.SetToolTip(sender as Control, string.Format("; (semi-colon) = seperate list items"));
 		}
 
-		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void convertListToTable()
 		{
 			dataGridViewTable.DataSource = null;
